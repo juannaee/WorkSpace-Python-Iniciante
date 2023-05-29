@@ -5,11 +5,15 @@
         "editor.defaultFormatter": "ms-python.black-formatter"
     },
     "files.autoSave": "afterDelay",
-    "editor.formatOnSave": true,
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
     "python.formatting.provider": "none",
     "tabnine.experimentalAutoImports": true,
     "explorer.compactFolders": false,
-    "debug.terminal.clearBeforeReusing": false
+    "debug.terminal.clearBeforeReusing": false,
+    "git.confirmSync": false,
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true
 }
