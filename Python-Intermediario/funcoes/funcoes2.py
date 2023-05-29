@@ -13,7 +13,7 @@ def sum_args(*args):
     return total
 
 
-resultado_soma = sum_args(5, 5)
+resultado_soma = sum_args(7, 5, 8, 6, 4, 8)
 print(resultado_soma)
 
 teste_numero = 1
