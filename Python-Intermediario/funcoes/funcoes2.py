@@ -15,5 +15,3 @@ def sum_args(*args):
 
 resultado_soma = sum_args(7, 5, 8, 6, 4, 8)
 print(resultado_soma)
-
-teste_numero = 1
