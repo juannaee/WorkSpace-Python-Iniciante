@@ -15,3 +15,5 @@ def gerar_dados():
 s1 = gerar_dados()
 print(s1())
 print("10488775400")
+funcao_teste = s1()
+
