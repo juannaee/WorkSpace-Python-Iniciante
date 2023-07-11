@@ -10,10 +10,16 @@
     "python.formatting.provider": "none",
     "tabnine.experimentalAutoImports": true,
     "explorer.compactFolders": false,
-    "debug.terminal.clearBeforeReusing": false,
     "git.confirmSync": false,
     "editor.defaultFormatter": "ms-python.black-formatter",
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
-    "editor.formatOnType": true
+    "editor.formatOnType": true,
+    "debug.terminal.clearBeforeReusing": true,
+    "terminal.external.windowsExec": "C:\\Windows\\System32\\cmd.exe",
+    "code-runner.clearPreviousOutput": true,
+   
+
+
+
 }
