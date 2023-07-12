@@ -16,13 +16,9 @@ pessoa = {
 }
 
 
-
-
-
-
-
 for dados in pessoa:
     print(dados, ": ", pessoa[dados])
 
 print(pessoa["nome"])
 print(pessoa["sexo"])
+

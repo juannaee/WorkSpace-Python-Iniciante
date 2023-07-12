@@ -6,3 +6,19 @@ dict_1.update(
 )
 
 print(dict_1)
+
+lista_valores = [["Valor_6", 300], ["Valor_7", 350]]
+dict_1.update(lista_valores)
+
+print(dict_1)
+
+
+Total_soma_values = 0.0
+for valores in dict_1.values():
+    Total_soma_values = valores + valores
+
+print(Total_soma_values)
+
+
+
+
