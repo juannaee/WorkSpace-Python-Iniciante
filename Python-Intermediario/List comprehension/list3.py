@@ -20,10 +20,9 @@ lista_usuarios_inativo = [
 ]
 
 lista_usuarios_att = [
-    {**usuario, "STATUS": usuario["STATUS"] == "Inativo"}
-    if usuario["teste"] == 0
-    else {**usuario}
-    for usuario in lista_usuarios
+    {**usuario} if usuario["teste"] == 0 else {**usuario} for usuario in lista_usuarios
 ]
+
+lista_usuarios_att.append(lista_usuarios_inativo)
 
 p(lista_usuarios_att)
