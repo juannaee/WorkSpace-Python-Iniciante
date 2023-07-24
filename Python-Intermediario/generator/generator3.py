@@ -76,7 +76,7 @@ def flag_generator_2(v, gen):
     return "FINALIZADO"
 
 
-gen = flag_generator(1)
+# gen = flag_generator(1)
 gen_2 = flag_generator_2(1, flag_generator(1))
 
 # for i in gen:
