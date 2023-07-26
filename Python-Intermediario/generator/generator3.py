@@ -37,7 +37,7 @@ def multiplicacao(v1, v2):
 
 def flag_generator(v=0):
     yield f"RODANDO EXECUTAVEL #{v}: SOMA"
-    resultado = soma(4, 5)
+    resultado = soma(4, "A")
     if resultado is not None:
         print(f"Resultado soma:{resultado[1]}")
         print("!!PASSOU!!")
