@@ -7,7 +7,7 @@ def soma(*args):
     try:
         if sao_todos_numeros(*args):
             total = sum(args)
-            return True, total
+            return f"Resultado:{total}"
         else:
             raise TypeError("Existem valores nao numericos")
     except TypeError as error:
@@ -17,10 +17,8 @@ def soma(*args):
 
 
 def mult(*args):
-    total = 0
+    total = 1
     try:
-        if total == 0:
-            total = +1
         if sao_todos_numeros(*args):
             for i in args:
                 total = total * i
@@ -36,10 +34,9 @@ def mult(*args):
 def func_generator_():
     v = 0
     yield f"EXECUTANDO SCRIPT #{v + 1} FUNCAO: '{soma.__name__}'"
-    resultado = soma("a", 2)
-
-    if resultado is not None:
-        print(f"Resultado:{resultado[1]}")
+    result_soma = soma("a", 2)
+    if result_soma is not None:
+        print(result_soma)
     print("<====================================================>")
     yield f"EXECUTANDO SCRIPT #{v + 2} FUNCAO: '{mult.__name__}'"
     resultado = mult(2, 10)
