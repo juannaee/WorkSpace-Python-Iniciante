@@ -1,86 +1,60 @@
-def soma(v1, v2):
+def sao_todos_numeros(*args):
+    return all(isinstance(arg, (int, float)) for arg in args)
+
+
+def mostrar_excecao(error):
+    print(f"{error}")
+    print(f"Tipo exceção: {error.__class__.__name__}.")
+    return None
+
+
+def verificar_numeros(*args):
     try:
-        v1 = int(v1)
-        v2 = int(v2)
-        return True, v1 + v2
-
-    except ValueError:
-        print("Valores nao numericos!")
-
-
-def subtracao(v1, v2):
-    try:
-        v1 = int(v1)
-        v2 = int(v2)
-        return True, v1 - v2
-    except ValueError:
-        print("Valores nao numericos!")
+        if sao_todos_numeros(*args):
+            return True
+        else:
+            raise TypeError("Valores não numéricos.")
+    except TypeError as error:
+        return mostrar_excecao(error)
 
 
-def divisao(v1, v2):
-    try:
-        v1 = int(v1)
-        v2 = int(v2)
-        return True, v1 / v2
-    except ValueError:
-        print("Valores nao numericos!")
+def mostrar_mensagem_excutando(func):
+    return f"Executando Script /// Função: '{func.__name__}.'"
 
 
-def multiplicacao(v1, v2):
-    try:
-        v1 = int(v1)
-        v2 = int(v2)
-        return True, v1 * v2
-    except ValueError:
-        print("Valores nao numericos!")
+def mostrar_resultado(total):
+    return f"Resultado: {total}."
 
 
-def flag_generator(v=0):
-    yield f"RODANDO EXECUTAVEL #{v}: SOMA"
-    resultado = soma(4, "A")
-    if resultado is not None:
-        print(f"Resultado soma:{resultado[1]}")
-        print("!!PASSOU!!")
-    else:
-        print("ERROR!")
-
-    yield f"RODANDO EXECUTAVEL #{v+1}: SUBTRACAO"
-    resultado = subtracao(10, 2)
-    if resultado is not None:
-        print(f"Resultado subtracao:{resultado[1]}")
-        print("!!PASSOU!!")
-    else:
-        print("ERROR!")
-
-    return "FINALIZADO"
+def soma(*args):
+    total = 0
+    if verificar_numeros(*args):
+        total = sum(args)
+        return mostrar_resultado(total)
 
 
-def flag_generator_2(v, gen):
-    yield from gen
-    yield f"RODANDO EXECUTAVEL #{v+2}: MULTIPLICACAO"
-    resultado = multiplicacao(2, 2)
-    if resultado is not None:
-        print(f"resultado:{resultado[1]}")
-        print("!!PASSOU!!")
-    else:
-        print("ERROR!")
-
-    yield f"RODANDO EXECUTAVEL #{v+3}: DIVISAO"
-    resultado = divisao(10, 5)
-    if resultado is not None:
-        print(f"resultado:{resultado[1]}")
-        print("!!PASSOU!!")
-    else:
-        print("ERROR!")
-
-    return "FINALIZADO"
+def mult(*args):
+    total = 1
+    if verificar_numeros(*args):
+        for i in args:
+            total *= i
+        return mostrar_resultado(total)
 
 
-# gen = flag_generator(1)
-gen_2 = flag_generator_2(1, flag_generator(1))
+def func_generator_():
+    yield mostrar_mensagem_excutando(soma)
+    result_soma = soma(2, 2, 5, 6, 8, "a")
+    if result_soma is not None:
+        print(result_soma)
 
-# for i in gen:
-#     print(i)
+    print("<====================================================>")
 
-for i in gen_2:
+    yield mostrar_mensagem_excutando(mult)
+    result_mult = mult(2, 10)
+    if result_mult is not None:
+        print(result_mult)
+
+
+gen = func_generator_()
+for i in gen:
     print(i)
