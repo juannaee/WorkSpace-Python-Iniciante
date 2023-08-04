@@ -3,3 +3,4 @@ def soma(*args):
 
 
 print(soma(2, 2, 2, 2))
+
