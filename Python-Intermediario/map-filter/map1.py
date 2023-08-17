@@ -10,8 +10,8 @@ def aumentar_preco(valor, porcentagem):
     return round(valor * porcentagem, 2)
 
 
-def mudar_preco_produtos(produto):
-    return {**produto, "Preco": aumentar_preco_10_por_cento(produto["Preco"])}
+def mudar_preco_produtos(produtos):
+    return {**produtos, "Preco": aumentar_preco_10_por_cento(produtos["Preco"])}
 
 
 aumentar_preco_10_por_cento = partial(aumentar_preco, 1.1)
