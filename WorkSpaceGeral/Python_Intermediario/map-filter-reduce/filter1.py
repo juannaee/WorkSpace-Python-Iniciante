@@ -35,3 +35,14 @@ print("Produtos < R$ 180 Atualizados")
 
 lista_de_produtos_att_2 = filter(lambda p: p["Preco"] <= 180, lista_de_produtos)
 printando(lista_de_produtos_att_2)
+
+print("----------------------------------")
+print("Produtos >= R$ 1000 Atualizados")
+
+
+def filtrar_preco(produto):
+    return produto["Preco"] >= 1000
+
+
+lista_de_produtos_att_3 = filter(filtrar_preco, lista_de_produtos)
+printando(lista_de_produtos_att_3)
