@@ -24,10 +24,10 @@ def gerar_precos_aleatorios(lista):
     return lista
 
 
-def filtrar_produtos_precos(produto, exprecao, valor):
-    if exprecao == "<":
+def filtrar_produtos_precos(produto, expressao, valor):
+    if expressao == "<":
         return produto["Preco"] <= valor
-    if exprecao == ">":
+    if expressao == ">":
         return produto["Preco"] >= valor
 
 
@@ -40,7 +40,7 @@ def adicionar_porcentagem(valor, porcentagem):
 #    return {**produtos, "Preco": aumentar_preco_produtos(produtos["Preco"])}
 
 
-quantidade_de_produtos = 30
+quantidade_de_produtos = 1000
 produtos = gerar_produtos(quantidade_de_produtos)
 lista_produtos = gerar_precos_aleatorios(produtos)
 imprimir(lista_produtos)
