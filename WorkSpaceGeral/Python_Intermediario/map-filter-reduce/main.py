@@ -1,7 +1,6 @@
 import random
 import pprint
-
-# from functools import partial
+from functools import reduce
 
 
 MIN_PRECO = 50
@@ -35,12 +34,16 @@ def adicionar_porcentagem(valor, porcentagem):
     return round(valor * porcentagem, 2)
 
 
+def funcao_reduce_valor_total(acumulador, produto):
+    return acumulador + produto["Preco"]
+
+
 # não to utilizando essa logica pois fica mais "complexo" o codigo porém compensa manter para lembrar.
 # def mudar_preco_produtos(produtos):
 #    return {**produtos, "Preco": aumentar_preco_produtos(produtos["Preco"])}
 
 
-quantidade_de_produtos = 1000
+quantidade_de_produtos = 3
 produtos = gerar_produtos(quantidade_de_produtos)
 lista_produtos = gerar_precos_aleatorios(produtos)
 imprimir(lista_produtos)
@@ -68,3 +71,8 @@ lista_produtos_precos_atualizados = [
     for produto in lista_produtos
 ]
 imprimir(lista_produtos_precos_atualizados)
+
+print("================================================================")
+print("## Preco total ##")
+preco_total = reduce(funcao_reduce_valor_total, lista_produtos, 0)
+print(round(preco_total, 2))
