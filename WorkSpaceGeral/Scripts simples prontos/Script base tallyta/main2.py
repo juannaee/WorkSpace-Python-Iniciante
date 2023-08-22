@@ -9,7 +9,7 @@ from tkinter import filedialog
 class PlanilhaDividerEstilizerApp:
     def __init__(self, root):
         self.root = root
-        self.root.title("Planilha Divider & Estilizer")
+        self.root.title("Script Juan/Base")
 
         self.label1 = tk.Label(root, text="Caminho da Planilha Base:")
         self.label1.pack()
@@ -22,7 +22,7 @@ class PlanilhaDividerEstilizerApp:
         )
         self.browse_button1.pack()
 
-        self.label2 = tk.Label(root, text="Número de Divisões:")
+        self.label2 = tk.Label(root, text="Número de Consultores:")
         self.label2.pack()
 
         self.entry2 = tk.Entry(root)

@@ -1,4 +1,0 @@
-Baixar git bash
-pip install tk
-pip install pandas openpyxl
-
